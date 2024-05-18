@@ -33,48 +33,26 @@ const Index = () => {
       {/* Tools Section */}
       <VStack spacing={8} py={16}>
         <HStack spacing={8} wrap="wrap" justifyContent="center">
-          <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
-            <Image src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxBSSUyMHRvb2wlMjAxfGVufDB8fHx8MTcxNjA1NDUyN3ww&ixlib=rb-4.0.3&q=80&w=1080" alt="AI Tool 1" />
-            <Box p={6}>
-              <Text fontWeight="bold" fontSize="xl">
-                AI Tool 1
-              </Text>
-              <Text mt={4}>Description of AI Tool 1.</Text>
-              <Button mt={4} colorScheme="teal">
-                Learn More
-              </Button>
+          {Array.from({ length: 40 }, (_, index) => (
+            <Box key={index} maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
+              <Image src={`https://images.unsplash.com/photo-1620712943543-bcc4688e7485?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxBSSUyMHRvb2wlMjA${index + 1}fGVufDB8fHx8MTcxNjA1NDUyN3ww&ixlib=rb-4.0.3&q=80&w=1080`} alt={`AI Tool ${index + 1}`} />
+              <Box p={6}>
+                <Text fontWeight="bold" fontSize="xl">
+                  AI Tool {index + 1}
+                </Text>
+                <Text mt={4}>Description of AI Tool {index + 1}.</Text>
+                <Button mt={4} colorScheme="teal">
+                  Learn More
+                </Button>
+              </Box>
             </Box>
-          </Box>
-          <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
-            <Image src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxBSSUyMHRvb2wlMjAyfGVufDB8fHx8MTcxNjA1NDUyOXww&ixlib=rb-4.0.3&q=80&w=1080" alt="AI Tool 2" />
-            <Box p={6}>
-              <Text fontWeight="bold" fontSize="xl">
-                AI Tool 2
-              </Text>
-              <Text mt={4}>Description of AI Tool 2.</Text>
-              <Button mt={4} colorScheme="teal">
-                Learn More
-              </Button>
-            </Box>
-          </Box>
-          <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
-            <Image src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxBSSUyMHRvb2wlMjAzfGVufDB8fHx8MTcxNjA1NDUzMXww&ixlib=rb-4.0.3&q=80&w=1080" alt="AI Tool 3" />
-            <Box p={6}>
-              <Text fontWeight="bold" fontSize="xl">
-                AI Tool 3
-              </Text>
-              <Text mt={4}>Description of AI Tool 3.</Text>
-              <Button mt={4} colorScheme="teal">
-                Learn More
-              </Button>
-            </Box>
-          </Box>
+          ))}
         </HStack>
       </VStack>
 
       {/* Footer */}
       <Box py={8} textAlign="center">
-        <Text>&copy; 2023 Everyday AI Tools. All rights reserved.</Text>
+        <Text>&copy; 2024 Everyday AI Tools. All rights reserved.</Text>
       </Box>
     </Container>
   );
